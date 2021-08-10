@@ -1,0 +1,15 @@
+<div>
+  <h2>{{ title }}</h2>
+  <!--
+    <h2 [textContent]="title" /> also works but it is much longer
+  !-->
+  <img src="{{ img1Src }}" alt="Scenery" />
+  <br>
+  <img [src]="img2Src" alt="Scenery 2" />
+  <table>
+    <tr>
+      <td [attr.colspan]="colSpan" >Hello</td>
+    </tr>
+  </table>
+  <button class="btn btn-primary" >Hello</button>
+</div>
