@@ -12,4 +12,16 @@
     </tr>
   </table>
   <button class="btn btn-primary" [class.active]="isActive" >Submit</button>
+  <div [style.backgroundColor]="backgroundColor" [style.width]="divWidth" >
+    <p [style.color]='isActive ? "white" : "#EEE"'> Hello Style Binding</p>
+  </div>
+<!-- this event bubbles (from the inside out)   -->
+  <div (click)="outerDivClicked()">
+    <div (click)="onDivClicked()" >
+      <button (click)="onSave($event)" class="btn btn-dark">Save Me</button>
+    </div>
+  </div>
+
+  <input (keyup)="onKeyUp($event)"><br>
+  <input (keyup.enter)="onEnterUp()">
 </div>

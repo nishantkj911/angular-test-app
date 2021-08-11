@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-data-display',
   templateUrl: './data-display.component.html',
   styleUrls: ['./data-display.component.css']
 })
-export class DataDisplayComponent{
+export class DataDisplayComponent {
   title = "Data Display Section"
 
   // What this is done in HTML is called property binding. and can be done in another way.
@@ -26,4 +26,34 @@ export class DataDisplayComponent{
   */
   colSpan = 2
   isActive = true
+
+  // Style binding
+  // For more info on all the styles present, hit "DOM Style Object properties" in Google and use the W3s link
+  backgroundColor = "#227edc"
+  divWidth = "50%"
+
+  // Event Binding
+  onSave($event: MouseEvent) {
+    $event.stopPropagation() // prevents the event bubbling
+    console.log("button was clicked", $event)
+  }
+
+  onDivClicked() {
+    console.log("div was clicked")
+  }
+
+  outerDivClicked() {
+    console.log("outer div was clicked")
+  }
+
+  onKeyUp($event: KeyboardEvent) {
+    console.log($event)
+    if ($event.key == "Enter") {
+      console.log("enter was pressed");
+    }
+  }
+
+  onEnterUp() {
+    console.log("enter was pressed");
+  }
 }
