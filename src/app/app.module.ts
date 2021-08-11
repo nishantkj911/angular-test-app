@@ -8,6 +8,7 @@ import {AuthorsComponent} from './authors/authors.component';
 import {DataDisplayComponent} from './data-display/data-display.component';
 import {SummaryPipePipe} from './summary-pipe.pipe';
 import { FavoriteIconComponent } from './favorite-icon/favorite-icon.component';
+import { TitleCaseComponent } from './title-case/title-case.component';
 
 @NgModule({
     declarations: [
@@ -15,7 +16,8 @@ import { FavoriteIconComponent } from './favorite-icon/favorite-icon.component';
         AuthorsComponent,
         DataDisplayComponent,
         SummaryPipePipe,
-        FavoriteIconComponent
+        FavoriteIconComponent,
+        TitleCaseComponent
     ],
     imports: [
         BrowserModule, // built-in module. stuff which Browser application needs.
