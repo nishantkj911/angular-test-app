@@ -3,25 +3,32 @@
   <!--
     <h2 [textContent]="title" /> also works but it is much longer
   !-->
-  <img src="{{ img1Src }}" alt="Scenery" />
+  <img src="{{ img1Src }}" alt="Scenery"/>
   <br>
-  <img [src]="img2Src" alt="Scenery 2" />
+  <img [src]="img2Src" alt="Scenery 2"/>
   <table>
     <tr>
-      <td [attr.colspan]="colSpan" >Hello</td>
+      <td [attr.colspan]="colSpan">Hello</td>
     </tr>
   </table>
-  <button class="btn btn-primary" [class.active]="isActive" >Submit</button>
-  <div [style.backgroundColor]="backgroundColor" [style.width]="divWidth" >
+  <button class="btn btn-primary" [class.active]="isActive">Submit</button>
+  <div [style.backgroundColor]="backgroundColor" [style.width]="divWidth">
     <p [style.color]='isActive ? "white" : "#EEE"'> Hello Style Binding</p>
   </div>
-<!-- this event bubbles (from the inside out)   -->
+  <!-- this event bubbles (from the inside out)   -->
   <div (click)="outerDivClicked()">
-    <div (click)="onDivClicked()" >
+    <div (click)="onDivClicked()">
       <button (click)="onSave($event)" class="btn btn-dark">Save Me</button>
     </div>
   </div>
 
+  <!--  Processing Various Events-->
   <input (keyup)="onKeyUp($event)"><br>
-  <input (keyup.enter)="onEnterUp()">
+  <input (keyup.enter)="onEnterUp()"><br>
+  <input #element (keyup)="processTypedValue(element)">
+
+  <!--  Two way property binding-->
+  <input [value]="email1" (keyup.enter)="$event.target.value = email1; emailProcessing1()">
+  <input [(ngModel)]="email2" (keyup.enter)="emailProcessing1()">
+
 </div>

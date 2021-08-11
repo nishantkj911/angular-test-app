@@ -56,4 +56,17 @@ export class DataDisplayComponent {
   onEnterUp() {
     console.log("enter was pressed");
   }
+
+  // Element passed from there is called the template variable
+  processTypedValue(element: HTMLInputElement) {
+    let email = element.value
+    console.log(email)
+  }
+
+  email1 = "abc@example.com";
+  email2: string | undefined;
+
+  emailProcessing1() {
+    console.log(this.email1)
+  }
 }
