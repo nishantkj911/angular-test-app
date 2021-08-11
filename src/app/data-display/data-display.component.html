@@ -28,7 +28,7 @@
   <input #element (keyup)="processTypedValue(element)">
 
   <!--  Two way property binding-->
-  <input [value]="email1" (keyup.enter)="$event.target.value = email1; emailProcessing1()">
-  <input [(ngModel)]="email2" (keyup.enter)="emailProcessing1()">
+  <input [value]="email1" (keyup.enter)="email1 = $any($event.target).value; emailProcessing1()">
+  <input [(ngModel)]="email2" (keyup.enter)="emailProcessing2()" (focusin)="emptyText()">
 
 </div>

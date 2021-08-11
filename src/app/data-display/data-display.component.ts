@@ -64,9 +64,17 @@ export class DataDisplayComponent {
   }
 
   email1 = "abc@example.com";
-  email2: string | undefined;
+  email2 = "xyz@example.com";
 
   emailProcessing1() {
     console.log(this.email1)
+  }
+
+  emailProcessing2() {
+    console.log(this.email2)
+  }
+
+  emptyText() {
+    this.email2 = ""
   }
 }
