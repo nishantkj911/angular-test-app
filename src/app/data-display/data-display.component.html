@@ -1,34 +1,52 @@
-<div>
-  <h2>{{ title }}</h2>
-  <!--
-    <h2 [textContent]="title" /> also works but it is much longer
-  !-->
-  <img src="{{ img1Src }}" alt="Scenery"/>
-  <br>
-  <img [src]="img2Src" alt="Scenery 2"/>
-  <table>
-    <tr>
-      <td [attr.colspan]="colSpan">Hello</td>
-    </tr>
-  </table>
-  <button class="btn btn-primary" [class.active]="isActive">Submit</button>
-  <div [style.backgroundColor]="backgroundColor" [style.width]="divWidth">
-    <p [style.color]='isActive ? "white" : "#EEE"'> Hello Style Binding</p>
-  </div>
-  <!-- this event bubbles (from the inside out)   -->
-  <div (click)="outerDivClicked()">
-    <div (click)="onDivClicked()">
-      <button (click)="onSave($event)" class="btn btn-dark">Save Me</button>
+<div style="display: none">
+    <h2>{{ title }}</h2>
+    <!--
+      <h2 [textContent]="title" /> also works but it is much longer
+    !-->
+    <div>
+        <div style="width: fit-content">
+            <img src="{{ img1Src }}" alt="Scenery" style="width: fit-content"/>
+        </div>
+        <div style="width: fit-content">
+            <img [src]="img2Src" alt="Scenery 2" style="width: fit-content"/>
+        </div>
     </div>
-  </div>
+    <table>
+        <tr>
+            <td [attr.colspan]="colSpan">Hello</td>
+        </tr>
+    </table>
+    <button class="btn btn-primary" [class.active]="isActive">Submit</button>
+    <div [style.backgroundColor]="backgroundColor" [style.width]="divWidth">
+        <p [style.color]='isActive ? "white" : "#EEE"'> Hello Style Binding</p>
+    </div>
+    <!-- this event bubbles (from the inside out)   -->
+    <div (click)="outerDivClicked()">
+        <div (click)="onDivClicked()">
+            <button (click)="onSave($event)" class="btn btn-dark">Save Me</button>
+        </div>
+    </div>
 
-  <!--  Processing Various Events-->
-  <input (keyup)="onKeyUp($event)"><br>
-  <input (keyup.enter)="onEnterUp()"><br>
-  <input #element (keyup)="processTypedValue(element)">
+    <!--  Processing Various Events-->
+    <input (keyup)="onKeyUp($event)"><br>
+    <input (keyup.enter)="onEnterUp()"><br>
+    <input #element (keyup)="processTypedValue(element)">
 
-  <!--  Two way property binding-->
-  <input [value]="email1" (keyup.enter)="email1 = $any($event.target).value; emailProcessing1()">
-  <input [(ngModel)]="email2" (keyup.enter)="emailProcessing2()" (focusin)="emptyText()">
-
+    <!--  Two way property binding-->
+    <input [value]="email1" (keyup.enter)="email1 = $any($event.target).value; emailProcessing1()">
+    <input [(ngModel)]="email2" (keyup.enter)="emailProcessing2()" (focusin)="emptyText()">
+    <div>
+        <p>
+            {{ course.title | uppercase }}<br>
+            {{ course.students | number }}<br>
+            {{ course.rating | number:'1.2-3' }}<br>
+            {{ course.price | number | currency:'INR' }}<br>
+            {{ course.releaseDate | date:'dd-MMM-yyyy' }}<br>
+        </p>
+    </div>
+    <div>
+        <p>
+            {{ longText | summary:100 }}
+        </p>
+    </div>
 </div>
