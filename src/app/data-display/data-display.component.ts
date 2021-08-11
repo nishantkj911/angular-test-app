@@ -25,4 +25,5 @@ export class DataDisplayComponent{
       ex. textContent doesnt exist in HTML too.
   */
   colSpan = 2
+  isActive = true
 }
