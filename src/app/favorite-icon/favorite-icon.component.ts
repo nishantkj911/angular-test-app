@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
-  selector: 'app-favorite-icon',
-  templateUrl: './favorite-icon.component.html',
-  styleUrls: ['./favorite-icon.component.css']
-})
-export class FavoriteIconComponent  {
+    selector: 'app-favorite-icon',
+    templateUrl: './favorite-icon.component.html',
+    styleUrls: ['./favorite-icon.component.css'],
+    inputs: ['textContent'], // only works if there is a field with the same name. Plus, refactoring doesnt work
 
-    fillColor = "#000"
-    isFavorite = false
+})
+export class FavoriteIconComponent {
+    @Input() isFavorite: boolean = false;
+    textContent: string = "";
+
+    // @Input() info = { textContent, isFavorite: boolean};
 
     changeFill() { // Use this if additional logic required.
         this.isFavorite = !this.isFavorite;
