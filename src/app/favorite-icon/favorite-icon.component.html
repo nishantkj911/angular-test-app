@@ -1,0 +1,7 @@
+<div>
+    <h1>Favorite Icon</h1>
+    <div>
+        <i class="bi" [class.bi-star]="!isFavorite" [class.bi-star-fill]="isFavorite"
+           (click)="this.isFavorite = !this.isFavorite;"></i>
+    </div>
+</div>
