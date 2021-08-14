@@ -1,5 +1,5 @@
 <div>
     <h1>Title Change</h1>
-    <input (keyup)="editContent($event)"><br>
-    <label [textContent]="editedFieldContent" ></label>
+    <input [(ngModel)]="inputText" ><br>
+    <label [textContent]="inputText | myTitleCase" ></label>
 </div>
