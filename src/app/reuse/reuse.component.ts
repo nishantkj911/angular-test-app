@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FavoriteChangeEvent} from "../favorite-icon/favorite-icon.component";
 
 @Component({
   selector: 'app-reuse',
@@ -15,4 +16,7 @@ export class ReuseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onFavChanged(eventArgs: FavoriteChangeEvent) {
+      eventArgs.favorite ? console.log("I am Favorite!!"):null;
+  }
 }

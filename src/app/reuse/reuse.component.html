@@ -1,2 +1,8 @@
 <app-favorite-icon [isFavorite]="info.isFavorite"
-                   [textContent]="info.title"></app-favorite-icon>
+                   [textContent]="info.title"
+                   (favChanged)="onFavChanged($event)">
+    <!--    This renders only the content in final product-->
+    <ng-container class="heading">Heading</ng-container>
+    <!--    This renders the div in final product-->
+    <div class="body">Body</div>
+</app-favorite-icon>

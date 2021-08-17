@@ -1,7 +1,17 @@
 <div>
     <div>
         <i class="bi" [class.bi-star]="!isFavorite" [class.bi-star-fill]="isFavorite"
-           (click)="this.isFavorite = !this.isFavorite;"></i>
-        <label style="padding-left: 6px">{{ textContent }}</label>
+           (click)="changeFill()"></i>
+        <label style="padding-left: 6px">{{ textContent }}</label><br>
+
+        <!--This is only for demonstrating the functionality. Doesnt make sense in this context-->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <ng-content select=".heading"></ng-content>
+            </div>
+            <div class="panel-body">
+                <ng-content select=".body"></ng-content>
+            </div>
+        </div>
     </div>
 </div>
