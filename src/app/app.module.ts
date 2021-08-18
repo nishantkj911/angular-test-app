@@ -11,6 +11,7 @@ import { FavoriteIconComponent } from './favorite-icon/favorite-icon.component';
 import { TitleCaseComponent } from './title-case/title-case.component';
 import { TitleCasePipePipe } from './title-case-pipe.pipe';
 import { ReuseComponent } from './reuse/reuse.component';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { ReuseComponent } from './reuse/reuse.component';
         FavoriteIconComponent,
         TitleCaseComponent,
         TitleCasePipePipe,
-        ReuseComponent
+        ReuseComponent,
+        LikeComponent
     ],
     imports: [
         BrowserModule, // built-in module. stuff which Browser application needs.
