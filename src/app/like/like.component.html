@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col col-1">
+            <!--            TODO: indicate the status of buttons if upvoted or downvoted by changing the color -->
+            <button class="btn btn-light bi bi-chevron-up" (click)="upvoteClicked()" style="width: 100%"></button>
+            <div class="align-content-center p-2" style="text-align: center">{{ likes }}</div>
+            <button class="btn btn-light bi bi-chevron-down" (click)="downvoteClicked()" style="width: 100%"></button>
+        </div>
+        <div class="col col-6 bg-light align-items-center d-flex">
+            <div>World</div>
+        </div>
+    </div>
+</div>
