@@ -12,6 +12,7 @@ import { TitleCaseComponent } from './title-case/title-case.component';
 import { TitleCasePipePipe } from './title-case-pipe.pipe';
 import { ReuseComponent } from './reuse/reuse.component';
 import { LikeComponent } from './like/like.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { LikeComponent } from './like/like.component';
         TitleCaseComponent,
         TitleCasePipePipe,
         ReuseComponent,
-        LikeComponent
+        LikeComponent,
+        DirectivesComponent
     ],
     imports: [
         BrowserModule, // built-in module. stuff which Browser application needs.
