@@ -1,4 +1,5 @@
-<div *ngIf="courses.length > 0; then courseList else emptyCourses">
+<!--
+<div *ngIf="courses?.length > 0; then courseList else emptyCourses">
 
 </div>
 <ng-template #courseList>
@@ -8,6 +9,7 @@
 <ng-template #emptyCourses>
     No Courses Yet
 </ng-template>
+-->
 
 <div class="navbar-nav p-2">
     <a class="p-2 nav-item" [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">Map View</a>
@@ -17,4 +19,20 @@
     <div *ngSwitchCase="'map'">Map View Content</div>
     <div *ngSwitchCase="'list'">List View Content</div>
     <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<div>
+    <h2>Course List</h2>
+    <div>
+        <button class="btn" (click)="onAdd()">Add New</button>
+    </div>
+    <div>
+        <button (click)="loadCourses()">Load</button>
+    </div>
+    <ul>
+        <li *ngFor="let course of courses; index as i; trackBy: trackCourseCustom">
+            {{ course.name }}
+            <button class="btn btn-secondary" (click)="onRemove(i)">Remove</button>
+        </li>
+    </ul>
 </div>

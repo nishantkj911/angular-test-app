@@ -1,7 +1,8 @@
 <div>
     <div>
-        <i class="bi" [class.bi-star]="!isFavorite" [class.bi-star-fill]="isFavorite"
-           (click)="changeFill()"></i>
+        <i class="bi" [ngClass]="{'bi-star': !isFavorite, 'bi-star-fill': isFavorite}" (click)="changeFill()"></i>
+<!--        <i class="bi" [class.bi-star]="!isFavorite" [class.bi-star-fill]="isFavorite" (click)="changeFill()"></i> -->
+
         <label style="padding-left: 6px">{{ textContent }}</label><br>
 
         <!--This is only for demonstrating the functionality. Doesnt make sense in this context-->
